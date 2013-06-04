@@ -1,15 +1,15 @@
 package gov.nih.cit.editdistance;
 
 public class DamerauLevenshteinDistance {
-    private static int Minimum(int a, int b, int c) {
+    private static int minimum(int a, int b, int c) {
         return Math.min(Math.min(a, b), c);
     }
 
-    private static int Minimum (int a, int b) {
+    private static int minimum(int a, int b) {
         return Math.min(a, b);
     }
 
-    public static int computeLevensteinDistance(String s, String t){
+    public static int computeLevenshteinDistance(String s, String t){
         int d[][];
         int n; // length of s
         int m; // length of t
@@ -47,10 +47,10 @@ public class DamerauLevenshteinDistance {
                 }else{
                     cost = 1;
                 }
-                d[i][j] = Minimum(d[i-1][j]+1, d[i][j-1]+1, d[i-1][j-1] + cost);
+                d[i][j] = minimum(d[i - 1][j] + 1, d[i][j - 1] + 1, d[i - 1][j - 1] + cost);
 
                 if(i > 1 && j > 1 && s_i == t_j-1 && s_i-1 == t_j){ 
-                    d[i][j] = Minimum(d[i][j], d[i-2][j-2] + cost);
+                    d[i][j] = minimum(d[i][j], d[i - 2][j - 2] + cost);
                 }
             }
         }
