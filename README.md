@@ -2,27 +2,28 @@ QA Automation Lead - Homework problem
 ========================================
 We anticipate that this problem will take you about 1 hour. We know that this is a significant time committment before a technical phone screen, but we want to ensure that we hire only exceptionally good QA leads and this helps us find them.
 
-Goal: Test a Damerau-Levenshtein distance algorithm implementation. 
+__Goal__: Test a Damerau-Levenshtein distance algorithm implementation. 
 
-Specification: 
+__Specification__: 
 DamerauLevenshtein(s1, s2) = 
     The minimum number of "edits" required to transform s1 into s2, where
-    one "edit" is either 
-        - the addition of a letter, 
-        - deletion of a letter
-        - replacement of a single letter
-        - transposition of two letters (such as 'cehgg' instead of 'chegg')
+    one "edit" is either:
+- the addition of a letter, 
+- deletion of a letter
+- replacement of a single letter
+- transposition of two letters (such as 'cehgg' instead of 'chegg')
     
 
-Example: (from Wikipedia)
-DamerauLevenshtein('kitten', 'sitting') = 3
+__Example__: (from Wikipedia)
+
+    DamerauLevenshtein('kitten', 'sitting') = 3
     [ replace k with s, replace e with i, add g ]
     
-Code available here: 
+__Code available here__: 
 git clone from
 https://github.com/CheggEng/EditDistance
 
-Your objective:
+__Your objective__:
 Write a test suite in JUnit that tests this function against the spec.
 gov.nih.cit.editdistance.DamerauLevenshteinDistance.computeLevensteinDistance(String s, String t)
 
@@ -34,6 +35,6 @@ We don't know if it is perfectly correct or not.
 If you find any errors, that is great! Your test suite should run but the relevant test should fail.
 If you don't find errors, then obviously it should pass.
 
-Submission:
+__Submission__:
 Zip the project folder and email it to the recruiter
 
