@@ -1,0 +1,40 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'maven'
+
+
+repositories {
+    mavenCentral()
+}
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'resources'
+        }
+    }
+    test {
+        java {
+            srcDir 'test'
+        }
+        resources {
+            srcDir 'resources'
+        }
+    }
+}
+
+dependencies {
+    compile 'junit:junit:4.11'
+}
+
+
+task archive(dependsOn: 'jar',type: Tar) {
+    baseName = "solution"
+    destinationDir = new File('.')
+    compression = Compression.GZIP
+    from ('src/')
+}
+
